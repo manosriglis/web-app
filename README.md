@@ -12,7 +12,8 @@ Attributes
 
 - `node[['webapp']['vhost']` = apache vhosts files to create e.g. 
 
-`node['webapp']['vhost'] = {  
+```ruby
+node['webapp']['vhost'] = {  
   :site1 => {
       :name => "site1",
       :host => "site1.local", 
@@ -26,4 +27,4 @@ Attributes
       :docroot => "/site2"
     }
 }
-`
+```

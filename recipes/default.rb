@@ -15,32 +15,6 @@ node['webapp']['vhost'].each do |app_name, site|
     end  
 end
 
-
-=begin
-['apps'].each do |app|
-  web_app app do
-    server_name app['server_name']
-    server_aliases {}
-    docroot app['path']
-    allow_override "All"
-  end
-end
-
-web_app "skyscanner" do
-  server_name "skyscanner.net.local"
-  server_aliases {}
-  docroot "/projects/skyscanner/public_html"
-  allow_override "All"
-end
-
-web_app "glasgow2014-crm" do
-  server_name "glasgow2014-crm.local"
-  server_aliases {}
-  docroot "/projects/glasgow2014-crm/web"
-  allow_override "All"
-end
-=end 
-
 execute "install_rpm_epel" do
   command "rpm -ivh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm"
   not_if {::File.exists?('/etc/yum.repos.d/epel.repo')}
